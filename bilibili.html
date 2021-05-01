@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1>bilibili</h1>
+    </header>
+    <main>
+        <section>
+            <h2>aid:</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <h2>p:</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button onclick="getUrl()">Submit</button>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+        function getUrl() {
+            // get aid
+            const el = document.getElementsByTagName('textarea')[0]
+            console.log(el.innerHTML, el.value)
+            const aid = el.value
+
+            const el2 = document.getElementsByTagName('textarea')[1]
+            console.log(el2.innerHTML, el2.value)
+            const p = el2.value
+
+
+            // send xhr request
+            function reqListener() {
+                // do something later
+                console.log(this.responseText)
+                window.alert(this.responseText)
+            }
+
+            var oReq = new XMLHttpRequest()
+            oReq.addEventListener("load", reqListener)
+            // oReq.open("GET", "https://api.bilibili.com/x/web-interface/view?aid=" + aid)
+            oReq.open("GET", "http://127.0.0.1:8080/bilibiliurl?aid=" + aid + "&p=" + p)
+            // oReq.setRequestHeader("Host", "api.bilibili.com")
+            // oReq.setRequestHeader("referer", "api.bilibili.com")
+            // oReq.setRequestHeader("Access-Control-Allow-Origin", "api.bilibili.com")
+            // oReq.setRequestHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8080")
+            oReq.send()
+
+            //const urlAddress = el.value
+            // const urls = urlAddress.split(',')
+            // console.log(urls)
+            // window.open(urlAddress)
+            // console.log(player)
+            // const aid = urlAddress.split('/')[4]
+            // console.log(aid)
+
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

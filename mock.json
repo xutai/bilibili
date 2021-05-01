@@ -1,0 +1,1608 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "bvid": "",
+        "aid": 88447271,
+        "videos": 110,
+        "tid": 17,
+        "tname": "单机游戏",
+        "copyright": 1,
+        "pic": "http://i1.hdslb.com/bfs/archive/3a8d7a106ea0bc35e81c0c069490ddd705c23985.jpg",
+        "title": "侠盗猎车5 GTA5 游玩攻略 英文字幕 无解说",
+        "pubdate": 1581508266,
+        "ctime": 1581508266,
+        "desc": "",
+        "state": 0,
+        "attribute": 2113920,
+        "duration": 78534,
+        "rights": {
+            "bp": 0,
+            "elec": 0,
+            "download": 1,
+            "movie": 0,
+            "pay": 0,
+            "hd5": 1,
+            "no_reprint": 1,
+            "autoplay": 1,
+            "ugc_pay": 0,
+            "is_cooperation": 0,
+            "ugc_pay_preview": 0,
+            "no_background": 0
+        },
+        "owner": {
+            "mid": 350687968,
+            "name": "阿泰啊001",
+            "face": "http://i2.hdslb.com/bfs/face/52bed5ae6704a7f71ab9f7a68293293f0efebbf6.jpg"
+        },
+        "stat": {
+            "aid": 88447271,
+            "view": 55,
+            "danmaku": 0,
+            "reply": 0,
+            "favorite": 0,
+            "coin": 0,
+            "share": 0,
+            "now_rank": 0,
+            "his_rank": 0,
+            "like": 0,
+            "dislike": 0,
+            "evaluation": ""
+        },
+        "dynamic": "#单机##GTAV#",
+        "cid": 154528236,
+        "dimension": {
+            "width": 1924,
+            "height": 1080,
+            "rotate": 0
+        },
+        "no_cache": false,
+        "pages": [
+            {
+                "cid": 154528236,
+                "page": 1,
+                "from": "vupload",
+                "part": "Mission06 - Father or Son",
+                "duration": 2343,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154256595,
+                "page": 2,
+                "from": "vupload",
+                "part": "Mission06 - Father or Son",
+                "duration": 2343,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151561521,
+                "page": 3,
+                "from": "vupload",
+                "part": "Mission08 - Marriage Counseling",
+                "duration": 732,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151515704,
+                "page": 4,
+                "from": "vupload",
+                "part": "Mission09 - Daddy's Little Girl",
+                "duration": 997,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152302060,
+                "page": 5,
+                "from": "vupload",
+                "part": "Mission10 - Friend Request",
+                "duration": 1054,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151446393,
+                "page": 6,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store 1",
+                "duration": 1223,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151474054,
+                "page": 7,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store 2",
+                "duration": 41,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151475722,
+                "page": 8,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store5",
+                "duration": 47,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151476552,
+                "page": 9,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store6",
+                "duration": 200,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151479411,
+                "page": 10,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store7",
+                "duration": 19,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151479642,
+                "page": 11,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store8",
+                "duration": 18,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151479992,
+                "page": 12,
+                "from": "vupload",
+                "part": "Mission10 - Casing The Jewel Store9",
+                "duration": 577,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151431833,
+                "page": 13,
+                "from": "vupload",
+                "part": "Mission13 - The Jewel Store Job",
+                "duration": 421,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151440071,
+                "page": 14,
+                "from": "vupload",
+                "part": "Mission13 - The Jewel Store Job - After The Jewel Store Job - Franklin",
+                "duration": 43,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151584035,
+                "page": 15,
+                "from": "vupload",
+                "part": "Mission15 - Mr. Philips",
+                "duration": 1305,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151620499,
+                "page": 16,
+                "from": "vupload",
+                "part": "Mission17 - The Long Stretch",
+                "duration": 864,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151641890,
+                "page": 17,
+                "from": "vupload",
+                "part": "Mission18 - Nervous Ron",
+                "duration": 1123,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151663288,
+                "page": 18,
+                "from": "vupload",
+                "part": "Mission18 - Nervous Ron2",
+                "duration": 139,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151667435,
+                "page": 19,
+                "from": "vupload",
+                "part": "Mission18 - Nervous Ron4",
+                "duration": 110,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151665952,
+                "page": 20,
+                "from": "vupload",
+                "part": "Mission18 - Nervous Ron3",
+                "duration": 98,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151495583,
+                "page": 21,
+                "from": "vupload",
+                "part": "Mission19 - Fame or Shame",
+                "duration": 965,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151516147,
+                "page": 22,
+                "from": "vupload",
+                "part": "Mission19 - Fame or Shame - Tracey  call",
+                "duration": 33,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151668525,
+                "page": 23,
+                "from": "vupload",
+                "part": "Mission19 - Friends Reunited",
+                "duration": 1080,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156195829,
+                "page": 24,
+                "from": "vupload",
+                "part": "Mission21 - Hotel Assassination",
+                "duration": 424,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152699516,
+                "page": 25,
+                "from": "vupload",
+                "part": "Mission23 - Scouting the Pont",
+                "duration": 1727,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 2560,
+                    "height": 1440,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152096724,
+                "page": 26,
+                "from": "vupload",
+                "part": "Mission24 - Minisub",
+                "duration": 532,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151591629,
+                "page": 27,
+                "from": "vupload",
+                "part": "Mission25 - Cargobob",
+                "duration": 578,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152101134,
+                "page": 28,
+                "from": "vupload",
+                "part": "Mission26 - Three's Company",
+                "duration": 1206,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152115839,
+                "page": 29,
+                "from": "vupload",
+                "part": "Mission27 -Did Somebody Say Yoga",
+                "duration": 1290,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152304911,
+                "page": 30,
+                "from": "vupload",
+                "part": "Mission28 - Hood Safari",
+                "duration": 895,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152307502,
+                "page": 31,
+                "from": "vupload",
+                "part": "Mission29 - The Multi Target Assassination",
+                "duration": 1085,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152502823,
+                "page": 32,
+                "from": "vupload",
+                "part": "Mission30 - By the Book",
+                "duration": 1561,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152310595,
+                "page": 33,
+                "from": "vupload",
+                "part": "Mission31 - Trash Truck",
+                "duration": 126,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152310975,
+                "page": 34,
+                "from": "vupload",
+                "part": "Mission32 - Boiler Suits",
+                "duration": 55,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152311121,
+                "page": 35,
+                "from": "vupload",
+                "part": "Mission33 - Tow Truck",
+                "duration": 169,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152316826,
+                "page": 36,
+                "from": "vupload",
+                "part": "Mission34 - Masks",
+                "duration": 91,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152517096,
+                "page": 37,
+                "from": "vupload",
+                "part": "Mission35 - The Merryweather Heist",
+                "duration": 2210,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152317462,
+                "page": 38,
+                "from": "vupload",
+                "part": "Mission36 - Blitz Play 01",
+                "duration": 285,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152798644,
+                "page": 39,
+                "from": "vupload",
+                "part": "Mission36 - Blitz Play 02",
+                "duration": 1084,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154262507,
+                "page": 40,
+                "from": "vupload",
+                "part": "Mission37 - I Fought The Law",
+                "duration": 1076,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154532216,
+                "page": 41,
+                "from": "vupload",
+                "part": "Mission37 - I Fought The Law",
+                "duration": 1076,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151090915,
+                "page": 42,
+                "from": "vupload",
+                "part": "Mission38 - The Vice Assassination",
+                "duration": 205,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153837506,
+                "page": 43,
+                "from": "vupload",
+                "part": "Mission38 - Mr. Richards",
+                "duration": 1283,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153852473,
+                "page": 44,
+                "from": "vupload",
+                "part": "Mission41 - Eye in the Sky",
+                "duration": 1596,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153876132,
+                "page": 45,
+                "from": "vupload",
+                "part": "Mission42 - Caida Libre",
+                "duration": 979,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153896355,
+                "page": 46,
+                "from": "vupload",
+                "part": "Mission44 - Minor Turbulence",
+                "duration": 1941,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154553139,
+                "page": 47,
+                "from": "vupload",
+                "part": "Mission46 - Paleto Score Setup",
+                "duration": 1234,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154539704,
+                "page": 48,
+                "from": "vupload",
+                "part": "Mission46 - Paleto Score Setup",
+                "duration": 1234,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154555628,
+                "page": 49,
+                "from": "vupload",
+                "part": "Mission48 - Military Hardware",
+                "duration": 120,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154556161,
+                "page": 50,
+                "from": "vupload",
+                "part": "Mission50 - Derailed",
+                "duration": 1142,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153136297,
+                "page": 51,
+                "from": "vupload",
+                "part": "Mission48 - Military Hardware",
+                "duration": 120,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154558505,
+                "page": 52,
+                "from": "vupload",
+                "part": "Mission51 - Money Business2",
+                "duration": 1819,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154102984,
+                "page": 53,
+                "from": "vupload",
+                "part": "Mission51 - Money Business",
+                "duration": 1819,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153123519,
+                "page": 54,
+                "from": "vupload",
+                "part": "Mission52 - Hang Ten",
+                "duration": 397,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154560896,
+                "page": 55,
+                "from": "vupload",
+                "part": "Mission52 - Hang Ten2",
+                "duration": 397,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154563039,
+                "page": 56,
+                "from": "vupload",
+                "part": "Mission53 - Surveying the Score",
+                "duration": 1223,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152876496,
+                "page": 57,
+                "from": "vupload",
+                "part": "Mission54 - Bury The Hatchet",
+                "duration": 1386,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154564831,
+                "page": 58,
+                "from": "vupload",
+                "part": "Mission55 - Pack Man",
+                "duration": 1138,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154566222,
+                "page": 59,
+                "from": "vupload",
+                "part": "Mission56 - Fresh Meat",
+                "duration": 1117,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153106401,
+                "page": 60,
+                "from": "vupload",
+                "part": "Mission57 - The Ballad of Rocco",
+                "duration": 288,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153091628,
+                "page": 61,
+                "from": "vupload",
+                "part": "Mission58 - Cleaning out the Bureau",
+                "duration": 836,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153304699,
+                "page": 62,
+                "from": "vupload",
+                "part": "Mission59 - Reuniting The Family",
+                "duration": 1185,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154567252,
+                "page": 63,
+                "from": "vupload",
+                "part": "Mission61 - Legal Trouble",
+                "duration": 570,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153063819,
+                "page": 64,
+                "from": "vupload",
+                "part": "Mission63 - The Bureau Raid",
+                "duration": 1655,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153155091,
+                "page": 65,
+                "from": "vupload",
+                "part": "Mission64 - The Wrap Up",
+                "duration": 848,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154567792,
+                "page": 66,
+                "from": "vupload",
+                "part": "Mission65 - Larmar Down",
+                "duration": 1309,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153163062,
+                "page": 67,
+                "from": "vupload",
+                "part": "Mission66 - The Meltdown",
+                "duration": 788,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154568963,
+                "page": 68,
+                "from": "vupload",
+                "part": "Mission67 - Driller",
+                "duration": 760,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 152811637,
+                "page": 69,
+                "from": "vupload",
+                "part": "Mission67 - Architect's Plan",
+                "duration": 545,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154569778,
+                "page": 70,
+                "from": "vupload",
+                "part": "Mission69 - Sidetracked",
+                "duration": 1338,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1924,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153048318,
+                "page": 71,
+                "from": "vupload",
+                "part": "Mission70 - The Big Score",
+                "duration": 1776,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 153307469,
+                "page": 72,
+                "from": "vupload",
+                "part": "Mission71 - The Third Way",
+                "duration": 2909,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156205650,
+                "page": 73,
+                "from": "vupload",
+                "part": "Mission No Name - Tracey",
+                "duration": 558,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151176746,
+                "page": 74,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Joe and Josef - The Civil Border Patrol",
+                "duration": 436,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151104927,
+                "page": 75,
+                "from": "vupload",
+                "part": "Strangers and Freaks - An American Welcome",
+                "duration": 443,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151107391,
+                "page": 76,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Liquidity Risk",
+                "duration": 261,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151112274,
+                "page": 77,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Minute Man Blues",
+                "duration": 232,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151140820,
+                "page": 78,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Risk Assessment 01",
+                "duration": 659,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151153301,
+                "page": 79,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Risk Assessment 02",
+                "duration": 285,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151172071,
+                "page": 80,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Targeted Risk",
+                "duration": 143,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154758186,
+                "page": 81,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Rampage Ballas",
+                "duration": 166,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154765745,
+                "page": 82,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Rampage Hipsters",
+                "duration": 176,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154769727,
+                "page": 83,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Rampage Military",
+                "duration": 228,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154776624,
+                "page": 84,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Rampage Rednecks",
+                "duration": 320,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154779250,
+                "page": 85,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Rampage Vagos",
+                "duration": 209,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154781106,
+                "page": 86,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Tonya02 -  Pulling Another Favor",
+                "duration": 579,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154788013,
+                "page": 87,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Tonya03 - Pulling Favors Again",
+                "duration": 271,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154790687,
+                "page": 88,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Tonya04 -  Still Pulling Favors",
+                "duration": 351,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154793892,
+                "page": 89,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Paparazzo01 - The Partnership",
+                "duration": 112,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154798783,
+                "page": 90,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Paparazzo03 - The Highness",
+                "duration": 240,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154802974,
+                "page": 91,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Paparazzo04 - The Meltdown",
+                "duration": 365,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154805119,
+                "page": 92,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Paparazzo05 - Reality Check",
+                "duration": 205,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154903153,
+                "page": 93,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Grass Roots - Franklin",
+                "duration": 210,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154908888,
+                "page": 94,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Grass Roots - The Drag",
+                "duration": 1688,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 154934257,
+                "page": 95,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Grass Roots - Trevor",
+                "duration": 288,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156199034,
+                "page": 96,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Vinewood Souvenirs - Nigel and Mrs. Thonnhill",
+                "duration": 138,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 155293448,
+                "page": 97,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Vinewood Souvenirs",
+                "duration": 1676,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156203802,
+                "page": 98,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Excercising Demons - Franklin",
+                "duration": 358,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156213131,
+                "page": 99,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Excercising Demons - Trevor",
+                "duration": 237,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1922,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156215071,
+                "page": 100,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Fair Game",
+                "duration": 1014,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156203853,
+                "page": 101,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Shift Work",
+                "duration": 432,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 156203826,
+                "page": 102,
+                "from": "vupload",
+                "part": "Strangers and Freaks - Target Practice - Trevor",
+                "duration": 632,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151107280,
+                "page": 103,
+                "from": "vupload",
+                "part": "Call - Dr.Friedlander - 01",
+                "duration": 21,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151106997,
+                "page": 104,
+                "from": "vupload",
+                "part": "Call - Amanda De Santa - 01",
+                "duration": 42,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151426219,
+                "page": 105,
+                "from": "vupload",
+                "part": "Call - Ron 01",
+                "duration": 46,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151112224,
+                "page": 106,
+                "from": "vupload",
+                "part": "Call - Lester 01",
+                "duration": 16,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151426818,
+                "page": 107,
+                "from": "vupload",
+                "part": "Call - Franklin to Trevor - Talking about Oneil Brothers",
+                "duration": 22,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151428799,
+                "page": 108,
+                "from": "vupload",
+                "part": "Properties - The Hen House - drive booze to the bar",
+                "duration": 233,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151427417,
+                "page": 109,
+                "from": "vupload",
+                "part": "Properties - Pitchers - Bar Defended",
+                "duration": 36,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            },
+            {
+                "cid": 151107352,
+                "page": 110,
+                "from": "vupload",
+                "part": "Properties - Franklin's new safehouse unlocked",
+                "duration": 4,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 3840,
+                    "height": 2160,
+                    "rotate": 0
+                }
+            }
+        ],
+        "subtitle": {
+            "allow_submit": false,
+            "list": []
+        }
+    }
+}}
