@@ -9,6 +9,8 @@ const fs = require('fs')
 const querystring = require('querystring')
 const static = require('./static')
 
+
+
 // incomingMessage和serverResponse作为参数传入回调函数
 const server = http.createServer((req, res) => {
     //console.log(req)
@@ -21,7 +23,7 @@ const server = http.createServer((req, res) => {
     static(req,'js', url.pathname, res)
     static(req,'css', url.pathname, res)
 
-
+    
     if (req.url === '/favicon.ico') {
 
         const newPath = path.resolve(dir, 'favicon.ico')
@@ -37,7 +39,57 @@ const server = http.createServer((req, res) => {
         })
     } else if (url.pathname === '/bilibiliurl') {
 
+        const net = require('net')
+        const netSocket = new net.Socket({})
+        netSocket.connect({
+            port: 8081,
+            buffer: Buffer.alloc(4 * 1024),
+            callback: function(nread, buf) {
+                // Received data is available in `buf` from 0 to `nread`.
+                console.log('77', buf.toString('utf8', 0, nread));
+              }
+        }, () => { 
+            console.log('78');
+            // netSocket.write(JSON.stringify({ client: 'node', data: '123213'}))
+            const msg = "Host: localhost:8081" + "\r\n" +
+            "Connection: Upgrade" + "\r\n" +
+            "Upgrade: websocket" +  "\r\n" +
+            "Origin: http://localhost:8081" + "\r\n" +
+            "Sec-WebSocket-Version: 13" + "\r\n" +
+            "client: node" + "\r\n\r\n";
+
+            netSocket.write(msg)
+        })
+        netSocket.once('data', (buffer1) => {
+            buffer1 = buffer1.toString()
+            console.log('-------buffer1', '-------');
+            // console.log('-------buffer1', buffer1, '-------');
+            const msg = JSON.stringify(
+                {
+                    client: 'node',
+                    code: 666,
+                    msg: 'node client received from node server'
+                }
+            )
+            netSocket.write(msg)
+            netSocket.on('data', (buffer2) => {
+                buffer2 = buffer2.toString()
+                console.log('-------buffer2', '-------');
+                // console.log('-------buffer2', buffer2, '-------');
+                // netSocket.write('fdf')
+            })
+        })
         
+    
+    
+
+        res.setHeader('Access-Control-Allow-Origin', '*')
+
+        // ********* debug
+        // res.end()
+        // return
+        // *********
+  
         const query = querystring.parse(url.query, '&', '=', {
             decodeURIComponent: querystring.unescape(),
             maxKeys: 1000
@@ -97,15 +149,19 @@ const server = http.createServer((req, res) => {
 
                 // 第二个https请求api
                 // SESSDATA应该在chrome, Application,  Cookies, https://bilibili.com, SESSDATA
-                // SESSDATA = 66a87465%2C1583914439%2C94b12721
+                // SESSDATA = 66a87465%2C1583914439%2C94b12721 
+                // chrome://settings/cookies/detail?site=bilibili.com&search=cookie
                 const qn = 116
                 // should be quality
                 const url = `https://api.bilibili.com/x/player/playurl?avid=${aid}&cid=${cid}&qn=${qn}&otype=json`
                 const options = {
                     hostname: 'api.bilibili.com',
                     headers: {
-                        cookie: 'SESSDATA=66a87465%2C1583914439%2C94b12721'
-                    }
+                        // cookie: 'SESSDATA=6f772fe4%2C1647938954%2C0a363%2A91' // stable
+                        cookie: 'SESSDATA=253831f6%2C1643533759%2C97ff2*81'  // canary
+                        // cookie: 'SESSDATA=07b95f8b%2C1648631135%2C2f0c1%2Aa1' // dev
+                    },
+                    // rejectUnauthorized: false
                     //    agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
                 }
                 options.agent = new https.Agent(options)
@@ -127,15 +183,15 @@ const server = http.createServer((req, res) => {
 
                         //data2 = d.toString('utf-8')
                         data2 = body2
-                        console.log("data2 or body = ", body2)
+                        console.log('res2.on end', "data2 or body = ", body2)
 
 
-                        console.log('data2:', data2)
+                        console.log('res2.on end', 'data2:', data2)
                         data2json = JSON.parse(data2)
-                        console.log("data2json:", data2json)
+                        console.log('res2.on end',"data2json:", data2json)
                         const durl = data2json.data.durl[0].url
                         //const backup_url = data2json.data.durl[0].backup_url[0]
-                        console.log("durl:", durl)
+                        console.log("res2 on end", "durl:", durl)
 
                         const format = data2json.data.format
                         const quality = data2json.data.quality
@@ -150,7 +206,8 @@ const server = http.createServer((req, res) => {
                             durlfix = durl
                         }
 
-                        console.log('durlfix:', durlfix)
+                        console.log("res2 on end", 'durlfix:', durlfix)
+                        console.log("res2 on end", 'Referer:', `https://www.bilibili.com/video/av${aid}/`)
 
                         const options1 = {
                             headers: {
@@ -162,7 +219,8 @@ const server = http.createServer((req, res) => {
                                 'Referer': `https://www.bilibili.com/video/av${aid}/`,
                                 'Origin': 'https://www.bilibili.com',
                                 'Connection': 'keep-alive'
-                            }
+                            },
+                            rejectUnauthorized: false
                         }
                         vname = vname.replace('：', '')
                         vname = vname.replace(':', '')
@@ -204,22 +262,35 @@ const server = http.createServer((req, res) => {
 
                             })
                             res3.on('end', () => {
-                                console.log('The file is downloaded?')
+                                console.log(`File "${vname}.flv" is downloaded! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`)
                                 // res.end(`bilibiliURL("${durl}")`)
+                                // netSocket.write(JSON.stringify({ client: 'node', data: '123213'}))
+                                const msg = JSON.stringify(
+                                    {
+                                        client: 'node',
+                                        code: 573,
+                                        msg: `File "${vname}.flv" is downloaded! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`
+                                    }
+                                )
+                                netSocket.write(msg)
+                                res.end(`The file is downloaded`)
                                 //  res.end(`bilibiliURL('{"name":"zero"}')`)
                             })
                             res3.on('error', () => {
-                                console.log('the file is not downloaded?')
+                                console.log('res3 on error', 'the file is not downloaded?')
                             })
 
-                        }).on('error', (e) => {
-                            console.error(e)
+                        })
+                            .on('error', (e) => {
+                                console.error('req3 get error', e)
+                                res.end('req3 get error' + e)
                         })
                         req3.end()
                     })
                 })
                     .on('error', (e) => {
-                        console.error(e)
+                        console.error("req2 get error", e)
+                        res.end('req2 get error' + e)
                     })
 
                 req2.end()
@@ -227,7 +298,8 @@ const server = http.createServer((req, res) => {
             })
         })
             .on('error', (e) => {
-                console.error(e)
+                console.error("req1 https get error", e)
+                res.end('req1 https get  error' + e)
             })
 
         req1.end()
@@ -314,3 +386,16 @@ console.log("server.listening:", server.listening)
 
 
 console.log(`server is running on http://localhost:${port}`)
+
+
+// console.log("process", process)
+console.log("process.pid", process.pid)
+process.once('SIGUSR2', function () {
+    console.log("SIGUSR2")
+    console.log("not working!!!!!!!!!")
+    return
+    gracefulShutdown(function () {
+      process.kill(process.pid, 'SIGUSR2');
+    });
+});
+  

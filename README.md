@@ -30,7 +30,6 @@ refer to: [哔哩哔哩视频下载请求头的分析及伪造](https://www.jian
         
 [V2EX - 哔哩哔哩的视频全部升级成 BV 号了](https://www.v2ex.com/t/655367?p=1)，我看到他们聊到使用“window.aid”获取aid
 
-
 现在aid不能直接看了，每个aid都要f12,console里面拿，要使用`window.aid`
         
 ```
@@ -54,3 +53,17 @@ get cid:
 https://api.bilibili.com/x/player/pagelist?aid=606983262&jsonp=jsonp
 
 https://api.bilibili.com/x/web-interface/view?aid=606983262&cid=105640636
+
+
+
+
+### reference
+- Nodejs教程20：WebSocket之二：用原生实现WebSocket应用 https://blog.csdn.net/chencl1986/article/details/88411056
+- 原生模块打造一个简单的 WebSocket 服务器 https://zhuanlan.zhihu.com/p/26407649
+- Writing WebSocket servers https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers
+- Writing WebSocket client applications https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+- Writing a WebSocket server in Java Introduction https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_a_WebSocket_server_in_Java
+- Writing WebSocket servers https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers
+- The WebSocket API (WebSockets) https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+- WebSocket https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
+- net https://nodejs.org/dist/latest-v14.x/docs/api/net.html

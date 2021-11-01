@@ -7,6 +7,7 @@ module.exports = {
 }
 */
 
+
 /*
 思路：
 static(文件夹名)
