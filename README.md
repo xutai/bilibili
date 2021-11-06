@@ -1,5 +1,16 @@
 # bilibili
 
+
+```
+d:
+cd github/bilibili
+nodemon server.js
+
+d:
+cd github/bilibili
+nodemon netserver.js
+```
+
 ## 项目描述
 下载bilibili的视频
 
@@ -53,17 +64,16 @@ get cid:
 https://api.bilibili.com/x/player/pagelist?aid=606983262&jsonp=jsonp
 
 https://api.bilibili.com/x/web-interface/view?aid=606983262&cid=105640636
-
+```
 
 
 
 ### reference
-- Nodejs教程20：WebSocket之二：用原生实现WebSocket应用 https://blog.csdn.net/chencl1986/article/details/88411056
-- 原生模块打造一个简单的 WebSocket 服务器 https://zhuanlan.zhihu.com/p/26407649
-- Writing WebSocket servers https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers
-- Writing WebSocket client applications https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
-- Writing a WebSocket server in Java Introduction https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_a_WebSocket_server_in_Java
-- Writing WebSocket servers https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers
-- The WebSocket API (WebSockets) https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
-- WebSocket https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
-- net https://nodejs.org/dist/latest-v14.x/docs/api/net.html
+- [原生模块打造一个简单的 WebSocket 服务器](https://zhuanlan.zhihu.com/p/26407649)
+- [Nodejs教程20：WebSocket之二：用原生实现WebSocket应用](https://blog.csdn.net/chencl1986/article/details/88411056)
+- [mdn Writing WebSocket client applications](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications)
+- [mdn Writing a WebSocket server in Java Introduction](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_a_WebSocket_server_in_Java)
+- [mdn Writing WebSocket servers](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers)
+- [mdn The WebSocket API (WebSockets)](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+- [mdn api WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
+- [nodejs api net](https://nodejs.org/dist/latest-v14.x/docs/api/net.html)

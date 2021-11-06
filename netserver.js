@@ -130,7 +130,7 @@ const server = net.createServer({
                     if (data.opcode === 8) {
                         socket.end()
                     } else {
-                        socket.write(encodeWsFrame({ payloadData: `server received：${data.payloadData ? data.payloadData.toString() : ''}` }))
+                        // socket.write(encodeWsFrame({ payloadData: `server received：${data.payloadData ? data.payloadData.toString() : ''}` }))
                         // setInterval(function () {
                         //     socket.write(encodeWsFrame({ payloadData: new Date().toUTCString() }))
                         // }, 3000)

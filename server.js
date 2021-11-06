@@ -225,7 +225,7 @@ const server = http.createServer((req, res) => {
                         vname = vname.replace('：', '')
                         vname = vname.replace(':', '')
 
-                        const video = fs.createWriteStream(`${vname}.flv`)
+                        const video = fs.createWriteStream(`flv/${vname}.flv`)
                         const req3 = https.get(durlfix, options1, (res3) => {
                             res.end(`File "${vname}.flv" is downloading! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`)
                             res3.pipe(video)
