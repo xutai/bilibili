@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1>bilibili</h1>
+    </header>
+    <main>
+        <section>
+            <h2>aid:</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <h2>p:</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button onclick="getUrl()">Submit</button>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+        function getUrl() {
+            // get aid
+            const el = document.getElementsByTagName('textarea')[0]
+            // console.log("el.innerHTML", el.innerHTML, "el.value", el.value)
+            const aid = el.value
+
+            const el2 = document.getElementsByTagName('textarea')[1]
+            // console.log("el.innerHTML", el.innerHTML, "el.value", el.value)
+            const p = el2.value
+
+
+
+
+            // Create WebSocket connection.
+            const socket = new WebSocket(
+                'ws://localhost:8081',
+                // 'json'
+                );
+
+            // Connection opened
+            socket.addEventListener('open', function (event) {
+                // console.log("open")
+                // console.log("event", event)
+  
+                let msg = 'Web client'
+                // msg = { data: '123'}
+                // socket.send(JSON.stringify(msg));
+
+                socket.send(msg);
+            });
+
+            // Listen for messages
+            socket.addEventListener('message', function (event) {
+                // console.log("message")
+                // console.log('Message from server:', event.data);
+                // console.clear()
+                console.log(event.data);
+            });
+
+            socket.addEventListener('error', function (e) {
+                console.log("error")
+                // console.log(e);
+            });
+
+            socket.addEventListener('close', function (e) {
+                console.log("close")
+                // console.log(e);
+            });
+
+
+
+
+            // send xhr request
+            function reqListener(e) {
+                // do something later
+                console.log("this.responseText",this.responseText)
+                // window.alert(this.responseText)
+
+                // function reqListener2(e) {
+                //     console.log("this.responseText",this.responseText)
+                // }
+                // var oReq2 = new XMLHttpRequest()
+                // oReq.addEventListener("load", reqListener2)
+                // oReq.open("GET", "http://127.0.0.1:8080/bilibiliurl?aid=" + aid + "&p=" + p + "&seq=2")
+                // oReq.send()
+            }
+
+            var oReq = new XMLHttpRequest()
+            oReq.addEventListener("load", reqListener)
+            oReq.addEventListener("error", function(e) {
+                console.log("error", e)
+            })
+            // oReq.open("GET", "https://api.bilibili.com/x/web-interface/view?aid=" + aid)
+            oReq.open("GET", "http://127.0.0.1:8080/bilibiliurl?aid=" + aid + "&p=" + p + "&seq=1")
+
+            // oReq.setRequestHeader("Host", "api.bilibili.com")
+            // oReq.setRequestHeader("referer", "api.bilibili.com")
+            // oReq.setRequestHeader("Access-Control-Allow-Origin", "api.bilibili.com")
+            // oReq.setRequestHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8080")
+            oReq.send()
+
+            //const urlAddress = el.value
+            // const urls = urlAddress.split(',')
+            // console.log(urls)
+            // window.open(urlAddress)
+            // console.log(player)
+            // const aid = urlAddress.split('/')[4]
+            // console.log(aid)
+
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
