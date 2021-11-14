@@ -11,6 +11,18 @@ cd github/bilibili
 nodemon netserver.js
 ```
 
+```
+git add .
+git commit -m "new"
+git push origin master
+git status
+
+git fetch
+git merge origin/master
+git status
+```
+
+
 ## 项目描述
 下载bilibili的视频
 

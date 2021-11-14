@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6877ecdc-116a-4a9d-baea-fa112e9e5dd6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bilibili.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bilibili.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HttpServerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bilibili.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netserver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a933b310-f909-4a31-a121-53bee27b6bb2" />
+        <option name="url" value="https://github.com/xutai/bilibili.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/HttpServerClass.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://C:/Program Files/Java/jdk-17.0.1/lib/src.zip!/java.base/java/util/Formatter.java" root0="SKIP_INSPECTION" />
+    <setting file="jrt://C:/Program Files/Java/jdk-17.0.1!/jdk.httpserver/com/sun/net/httpserver/HttpServer.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="20r9GHBXVALoXUCGdEuRwQgLCtQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/lib" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\bilibili\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HttpServerClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpServerClass" />
+      <module name="bilibili" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HttpServerClass" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6877ecdc-116a-4a9d-baea-fa112e9e5dd6" name="Changes" comment="" />
+      <created>1636791742183</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636791742183</updated>
+      <workItem from="1636791743481" duration="261000" />
+      <workItem from="1636792017760" duration="179000" />
+      <workItem from="1636792204747" duration="244000" />
+      <workItem from="1636792465836" duration="936000" />
+      <workItem from="1636793426621" duration="1430000" />
+      <workItem from="1636794887570" duration="29000" />
+      <workItem from="1636794934139" duration="97000" />
+      <workItem from="1636795082453" duration="133000" />
+      <workItem from="1636795232982" duration="244000" />
+      <workItem from="1636795497051" duration="493000" />
+      <workItem from="1636796014646" duration="69000" />
+      <workItem from="1636796103437" duration="234000" />
+      <workItem from="1636796362393" duration="61000" />
+      <workItem from="1636796442270" duration="31000" />
+      <workItem from="1636796494824" duration="770000" />
+      <workItem from="1636797290669" duration="61000" />
+      <workItem from="1636797367396" duration="41000" />
+      <workItem from="1636797735137" duration="37000" />
+      <workItem from="1636797785515" duration="381000" />
+      <workItem from="1636798186210" duration="265000" />
+      <workItem from="1636798470540" duration="198000" />
+      <workItem from="1636798691004" duration="149000" />
+      <workItem from="1636799637942" duration="208000" />
+      <workItem from="1636799868528" duration="165000" />
+      <workItem from="1636800056298" duration="16000" />
+      <workItem from="1636800183544" duration="305000" />
+      <workItem from="1636800508634" duration="70000" />
+      <workItem from="1636800605407" duration="59000" />
+      <workItem from="1636800690936" duration="60000" />
+      <workItem from="1636800781957" duration="170000" />
+      <workItem from="1636801049282" duration="43000" />
+      <workItem from="1636801136235" duration="95000" />
+      <workItem from="1636801255643" duration="577000" />
+      <workItem from="1636803555133" duration="339000" />
+      <workItem from="1636803913862" duration="98000" />
+      <workItem from="1636804030744" duration="14691000" />
+      <workItem from="1636821262944" duration="389000" />
+      <workItem from="1636857595318" duration="28422000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.LinkedHashMap$Entry" memberName="value" />
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

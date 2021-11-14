@@ -10,7 +10,6 @@ const querystring = require('querystring')
 const static = require('./static')
 
 
-
 // incomingMessage和serverResponse作为参数传入回调函数
 const server = http.createServer((req, res) => {
     //console.log(req)
@@ -80,11 +79,8 @@ const server = http.createServer((req, res) => {
             })
         })
         
-    
-    
 
         res.setHeader('Access-Control-Allow-Origin', '*')
-
         // ********* debug
         // res.end()
         // return
@@ -227,7 +223,7 @@ const server = http.createServer((req, res) => {
 
                         const video = fs.createWriteStream(`flv/${vname}.flv`)
                         const req3 = https.get(durlfix, options1, (res3) => {
-                            res.end(`File "${vname}.flv" is downloading! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`)
+                            res.end(`"${vname}.flv" is downloading! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`)
                             res3.pipe(video)
                             // Readable Streams, Class: stream.Readable
                             let totalchunk1 = 0
@@ -237,39 +233,31 @@ const server = http.createServer((req, res) => {
                                 totalchunk1 += chunk.length
                                 cal1 = totalchunk1 / (1024 * 1024)
                                 cal1 = Math.floor(cal1)
-                                // console.log(`ondata - Received ${chunk.length} bytes of data`)
-                                console.log(`onreadable - totally received ${cal1} mega byte of data`)
+                                console.log(`"${vname}.flv" received ${cal1} mega byte`)
                             })
 
                             let totalchunk2 = 0
                             let cal2
                             res3.on('readable', () => {
-
                                 let chunk
                                 while (null !== (chunk = res3.read())) {
-                                    // console.log(typeof chunk) object
-                                    //  console.log(chunk.length)
                                     totalchunk2 += chunk.length
                                     // bite, byte, kilobyte, megabyte, gigabyte
                                     cal2 = totalchunk2 / (1024 * 1024)
-                                    //  console.log("totalchunk2=", totalchunk2)
-                                    //  console.log("cal2=", cal2)
                                     cal2 = Math.floor(cal2)
-                                    //console.log("cal2=", cal2)
-                                    // console.log(`Received ${chunk.length} bytes of data`)
-                                    console.log(`onreadable - totally received ${cal2} mega byte of data`)
+                                    console.log(`"${vname}.flv" received ${cal2} mega byte, res3 on readable`)
                                 }
 
                             })
                             res3.on('end', () => {
-                                console.log(`File "${vname}.flv" is downloaded! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`)
+                                console.log(`"${vname}.flv" is downloaded! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`)
                                 // res.end(`bilibiliURL("${durl}")`)
                                 // netSocket.write(JSON.stringify({ client: 'node', data: '123213'}))
                                 const msg = JSON.stringify(
                                     {
                                         client: 'node',
                                         code: 573,
-                                        msg: `File "${vname}.flv" is downloaded! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`
+                                        msg: `"${vname}.flv" is downloaded! aid=${aid}, cid=${cid}, quality=${quality}, format=${format}`
                                     }
                                 )
                                 netSocket.write(msg)
