@@ -15,7 +15,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
 
@@ -70,8 +69,6 @@ public class HttpServerClass {
     }
 
     static class MyHandler implements HttpHandler {
-        static final String dataFile = "./bilibili.html";
-        static final Path filePath = Paths.get(dataFile);
 
         public void downloadVid(byte[] arrayOfBytes, String vname) {
             Path vidFilePath = Paths.get("../flv/" + vname + ".flv");
@@ -86,21 +83,53 @@ public class HttpServerClass {
         }
 
         public void handle(HttpExchange httpExchange) throws IOException {
-            System.out.println("HTTP server in handle function, " + new Date());
-            String reqMethod = httpExchange.getRequestMethod();
-            URI reqURI = httpExchange.getRequestURI();
-            String reqURIStr = reqURI.toString();
-            String reqURIPath = reqURI.getPath();
-            String reqURIQuery = reqURI.getQuery();
-            InputStream reqBody = httpExchange.getRequestBody();
-            OutputStream os = httpExchange.getResponseBody();
-            Headers reqHeaders = httpExchange.getRequestHeaders();
-            Headers resHeaders = httpExchange.getResponseHeaders();
-            String response;
+            (new Thread(new HandleHttpThreadClass(httpExchange))).start();
+        }
+    }
 
-            CountDownLatch cdl = new CountDownLatch(1);
+    public static void handleHTTP() throws IOException {
+        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        HttpContext httpContext = server.createContext("/", new MyHandler());
+        server.setExecutor(null); // creates a default executor
+        server.start();
+    }
 
-            if (reqURIStr.equals("/")) {
+}
+
+
+class HandleHttpThreadClass extends Thread {
+    static final String HTMLFileStr = "../client/bilibili.html";
+    static final Path HTMLFilePath = Paths.get(HTMLFileStr);
+
+    private HttpExchange httpExchange = null;
+    public void run() {
+        System.out.format("%srunning a new thread!%n", "");
+        try {
+            handle(httpExchange);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public HandleHttpThreadClass(HttpExchange httpExchange) {
+        this.httpExchange = httpExchange;
+    }
+
+    public void handle(HttpExchange httpExchange) throws IOException {
+        String reqMethod = httpExchange.getRequestMethod();
+        URI reqURI = httpExchange.getRequestURI();
+        String reqURIStr = reqURI.toString();
+        String reqURIPath = reqURI.getPath();
+        String reqURIQuery = reqURI.getQuery();
+        InputStream reqBody = httpExchange.getRequestBody();
+        OutputStream os = httpExchange.getResponseBody();
+        Headers reqHeaders = httpExchange.getRequestHeaders();
+        Headers resHeaders = httpExchange.getResponseHeaders();
+        String response;
+
+        CountDownLatch cdl = new CountDownLatch(1);
+
+        if (reqURIStr.equals("/")) {
 //                response =
 //                        reqMethod + "\r\n\r\n" +
 //                                reqURI + "\r\n\r\n" +
@@ -112,65 +141,65 @@ public class HttpServerClass {
 //                                httpExchange.getResponseBody().toString() + "\r\n\r\n" +
 //                                Arrays.toString(reqBody.readAllBytes());
 
-                Charset charset = StandardCharsets.US_ASCII;
-                StringBuilder content = new StringBuilder();
-                try (BufferedReader reader = Files.newBufferedReader(filePath, charset)) {
-                    String line = null;
-                    while ((line = reader.readLine()) != null) {
+            Charset charset = StandardCharsets.US_ASCII;
+            StringBuilder content = new StringBuilder();
+            try (BufferedReader reader = Files.newBufferedReader(HTMLFilePath, charset)) {
+                String line = null;
+                while ((line = reader.readLine()) != null) {
 //                        System.out.println(line);
-                        content.append(line);
-                    }
-                    response = content.toString();
+                    content.append(line);
+                }
+                response = content.toString();
 //                BufferedReader reader = Files.newBufferedReader(filePath, charset);
 //                Byte[] allBytes =
 
-                    httpExchange.sendResponseHeaders(200, response.length());
-                    os.write(response.getBytes());
-                } catch (IOException ex) {
-                    System.err.format("IOException: %s%n", ex);
+                httpExchange.sendResponseHeaders(200, response.length());
+                os.write(response.getBytes());
+            } catch (IOException ex) {
+                System.err.format("IOException: %s%n", ex);
+            }
+
+        } else if (reqURIPath.equals("/bilibiliurl")) {
+            resHeaders.add("Access-Control-Allow-Origin", "*");
+            response = resHeaders.entrySet().toString();
+
+            Map<String, List<String>> queryParameters = HttpServerClass.getUrlParameters(reqURIStr);
+            String aid = queryParameters.get("aid").get(0);
+            String p = queryParameters.get("p").get(0);
+
+            HttpClient client = HttpClient.newBuilder()
+                    .version(HttpClient.Version.HTTP_1_1)
+                    .followRedirects(HttpClient.Redirect.NORMAL)
+                    .connectTimeout(Duration.ofSeconds(20))
+                    .build();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(URI.create("https://api.bilibili.com/x/web-interface/view?aid=" + aid))
+                    .timeout(Duration.ofMinutes(2))
+                    .header("Content-Type", "application/json")
+                    .GET()
+                    .build();
+            try {
+                HttpResponse<String> clientResponse = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+                String body = clientResponse.body();
+                ObjectMapper mapper = new ObjectMapper();
+                LinkedHashMap mm = mapper.readValue(body, LinkedHashMap.class);
+                LinkedHashMap<String, ?> data1jackson = (LinkedHashMap<String, String>) mm.get("data");
+
+                Integer cid;
+                String vname;
+                int page = Integer.parseInt(p);
+                if (p.isEmpty()) {
+                    cid = (Integer) data1jackson.get("cid");
+                    vname = (String) data1jackson.get("title");
+                } else {
+                    ArrayList pages = (ArrayList) data1jackson.get("pages");
+                    LinkedHashMap pageL = (LinkedHashMap) pages.get(page - 1);
+                    cid = (Integer) pageL.get("cid");
+                    vname = (String) pageL.get("part");
                 }
 
-            } else if (reqURIPath.equals("/bilibiliurl")) {
-                resHeaders.add("Access-Control-Allow-Origin", "*");
-                response = resHeaders.entrySet().toString();
-
-                Map<String, List<String>> queryParameters = HttpServerClass.getUrlParameters(reqURIStr);
-                String aid = queryParameters.get("aid").get(0);
-                String p = queryParameters.get("p").get(0);
-
-                HttpClient client = HttpClient.newBuilder()
-                        .version(HttpClient.Version.HTTP_1_1)
-                        .followRedirects(HttpClient.Redirect.NORMAL)
-                        .connectTimeout(Duration.ofSeconds(20))
-                        .build();
-                HttpRequest httpRequest = HttpRequest.newBuilder()
-                        .uri(URI.create("https://api.bilibili.com/x/web-interface/view?aid=" + aid))
-                        .timeout(Duration.ofMinutes(2))
-                        .header("Content-Type", "application/json")
-                        .GET()
-                        .build();
-                try {
-                    HttpResponse<String> clientResponse = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-                    String body = clientResponse.body();
-                    ObjectMapper mapper = new ObjectMapper();
-                    LinkedHashMap mm = mapper.readValue(body, LinkedHashMap.class);
-                    LinkedHashMap<String, ?> data1jackson = (LinkedHashMap<String, String>) mm.get("data");
-
-                    Integer cid;
-                    String vname;
-                    int page = Integer.parseInt(p);
-                    if (p.isEmpty()) {
-                        cid = (Integer) data1jackson.get("cid");
-                        vname = (String) data1jackson.get("title");
-                    } else {
-                        ArrayList pages = (ArrayList) data1jackson.get("pages");
-                        LinkedHashMap pageL = (LinkedHashMap) pages.get(page - 1);
-                        cid = (Integer) pageL.get("cid");
-                        vname = (String) pageL.get("part");
-                    }
-
-                    int qn = 116;
-                    String url = "https://api.bilibili.com/x/player/playurl?avid=" + aid + "&cid=" + cid + "&qn=" + qn + "&otype=json";
+                int qn = 116;
+                String url = "https://api.bilibili.com/x/player/playurl?avid=" + aid + "&cid=" + cid + "&qn=" + qn + "&otype=json";
 
 //                    Map<String, ?> options = new HashMap<>();
 //                    options.put("hostname", "api.bilibili.com");
@@ -178,78 +207,92 @@ public class HttpServerClass {
 //                    headers.put("cookie", "SESSDATA=253831f6%2C1643533759%2C97ff2*81");
 //                    options.put("headers", headers);
 
-                    HttpRequest httpRequest2 = HttpRequest.newBuilder()
-                            .uri(URI.create(url))
+                HttpRequest httpRequest2 = HttpRequest.newBuilder()
+                        .uri(URI.create(url))
+                        .timeout(Duration.ofMinutes(2))
+                        .header("hostname", "api.bilibili.com")
+                        .header("cookie", "SESSDATA=253831f6%2C1643533759%2C97ff2*81")
+                        .GET()
+                        .build();
+
+                HttpResponse<String> clientResponse2 = client.send(httpRequest2, HttpResponse.BodyHandlers.ofString());
+                String body2 = clientResponse2.body();
+                ObjectMapper mapper2 = new ObjectMapper();
+                LinkedHashMap mm2 = mapper2.readValue(body2, LinkedHashMap.class);
+                LinkedHashMap<String, ?> data2jackson = (LinkedHashMap<String, String>) mm2.get("data");
+
+                ArrayList<LinkedHashMap> durlList = (ArrayList<LinkedHashMap>) data2jackson.get("durl");
+                LinkedHashMap durlMap = durlList.get(0);
+                String durl = (String) durlMap.get("url");
+                String format = (String) data2jackson.get("format");
+                Integer quality = (Integer) data2jackson.get("quality");
+                String durlfix;
+
+                if (!durl.contains("https")) {
+                    durlfix = durl.replace("http", "https");
+                } else {
+                    durlfix = durl;
+                }
+
+                vname = vname.replace(": ", "");
+                vname = vname.replace(":", "");
+
+                try {
+                    HttpRequest httpRequest3 = HttpRequest.newBuilder()
+                            .uri(URI.create(durlfix))
                             .timeout(Duration.ofMinutes(2))
-                            .header("hostname", "api.bilibili.com")
-                            .header("cookie", "SESSDATA=253831f6%2C1643533759%2C97ff2*81")
+                            .header("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:56.0) Gecko/20100101 Firefox/56.0")
+                            .header("Accept", "*/*")
+                            .header("Accept-Language", "en-US,en;q=0.5")
+                            .header("Accept-Encoding", "gzip, deflate, br")
+                            .header("Range", "bytes=0-")
+                            .header("Referer", "https://www.bilibili.com/video/av" + aid + "/")
+                            .header("Origin", "https://www.bilibili.com")
                             .GET()
                             .build();
 
-                    HttpResponse<String> clientResponse2 = client.send(httpRequest2, HttpResponse.BodyHandlers.ofString());
-                    String body2 = clientResponse2.body();
-                    ObjectMapper mapper2 = new ObjectMapper();
-                    LinkedHashMap mm2 = mapper2.readValue(body2, LinkedHashMap.class);
-                    LinkedHashMap<String, ?> data2jackson = (LinkedHashMap<String, String>) mm2.get("data");
+                    // working
+                    // Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "HttpClient-1-Worker-1"
+                    // Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "HttpClient-1-SelectorManager"
+                    // Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "server-timer"
+                    // Java HotSpot(TM) 64-Bit Server VM warning: Exception java.lang.OutOfMemoryError occurred dispatching signal UNKNOWN to handler- the VM may need to be forcibly terminated
+//                        String finalVname1 = vname;
+//                        HttpResponse.BodyHandler<byte[]> downstreamHandler = responseInfo -> {
+//                            System.out.format("%s.flv is downloading!%n", finalVname1);
+//                            return HttpResponse.BodySubscribers.ofByteArray();
+//                        };
+//                        HttpResponse.BodyHandler<byte[]> bodyHandler = HttpResponse.BodyHandlers.buffering(downstreamHandler, 1024 * 1024);
+//                        String finalVname = vname;
+//                        CompletableFuture cf = client.sendAsync(httpRequest3, bodyHandler)
+//                                .thenApply(HttpResponse::body)
+//                                .thenAccept(arrayOfBytes -> downloadVid((byte[]) arrayOfBytes, finalVname))
+//                                .thenRun(() -> {
+//                                    String resBodyString = String.format("%s.flv is downloaded!%n", finalVname);
+//                                    byte[] resBodyToWriteToOutput = resBodyString.getBytes(StandardCharsets.UTF_8);
+//                                    int resBodyToWriteToOutputLength = resBodyToWriteToOutput.length;
+//                                    try {
+//                                        httpExchange.sendResponseHeaders(200, resBodyToWriteToOutputLength);
+//                                        os.write(resBodyToWriteToOutput);
+//                                    } catch (IOException e) {
+//                                        e.printStackTrace();
+//                                    }
+////                                    cdl.countDown();
+//                                });
+//                        cf.thenRun(() -> {});
+////                        cdl.await();
 
-                    ArrayList<LinkedHashMap> durlList = (ArrayList<LinkedHashMap>) data2jackson.get("durl");
-                    LinkedHashMap durlMap = durlList.get(0);
-                    String durl = (String) durlMap.get("url");
-                    String format = (String) data2jackson.get("format");
-                    Integer quality = (Integer) data2jackson.get("quality");
-                    String durlfix;
 
-                    if (!durl.contains("https")) {
-                        durlfix = durl.replace("http", "https");
-                    } else {
-                        durlfix = durl;
-                    }
 
-                    vname = vname.replace(": ", "");
-                    vname = vname.replace(":", "");
 
-                    try {
-                        HttpRequest httpRequest3 = HttpRequest.newBuilder()
-                                .uri(URI.create(durlfix))
-                                .timeout(Duration.ofMinutes(2))
-                                .header("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:56.0) Gecko/20100101 Firefox/56.0")
-                                .header("Accept", "*/*")
-                                .header("Accept-Language", "en-US,en;q=0.5")
-                                .header("Accept-Encoding", "gzip, deflate, br")
-                                .header("Range", "bytes=0-")
-                                .header("Referer", "https://www.bilibili.com/video/av" + aid + "/")
-                                .header("Origin", "https://www.bilibili.com")
-                                .GET()
-                                .build();
 
-                        // not working
-                        String finalVname1 = vname;
-                        HttpResponse.BodyHandler<byte[]> downstreamHandler = responseInfo -> {
-                            System.out.format("%s.flv is downloading!%n", finalVname1);
-                            return HttpResponse.BodySubscribers.ofByteArray();
-                        };
-                        HttpResponse.BodyHandler<byte[]> bodyHandler = HttpResponse.BodyHandlers.buffering(downstreamHandler, 1024 * 1024);
-                        String finalVname = vname;
-                        CompletableFuture cf = client.sendAsync(httpRequest3, bodyHandler)
-                                .thenApply(HttpResponse::body)
-                                .thenAccept(arrayOfBytes -> downloadVid((byte[]) arrayOfBytes, finalVname))
-                                .thenRun(() -> {
-                                    String resBodyString = String.format("%s.flv is downloaded!%n", finalVname);
-                                    byte[] resBodyToWriteToOutput = resBodyString.getBytes(StandardCharsets.UTF_8);
-                                    int resBodyToWriteToOutputLength = resBodyToWriteToOutput.length;
-                                    try {
-                                        httpExchange.sendResponseHeaders(200, resBodyToWriteToOutputLength);
-                                        os.write(resBodyToWriteToOutput);
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                    cdl.countDown();
-                                });
-                        cf.thenRun(() -> {});
-                        cdl.await();
-                        System.out.format("This process is running out...%s%n", "");
-                        // working
-//                        HttpResponse.BodyHandler<byte[]> bodyHandler = responseInfo -> HttpResponse.BodySubscribers.ofByteArray();
+                    // working
+                    // Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "HttpClient-1-Worker-1"
+                    // Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "server-timer"
+//                        String finalVname1 = vname;
+//                        HttpResponse.BodyHandler<byte[]> bodyHandler = responseInfo -> {
+//                            System.out.format("%s.flv is downloading!%n", finalVname1);
+//                            return HttpResponse.BodySubscribers.ofByteArray();
+//                        };
 //                        CompletableFuture<HttpResponse<byte[]>> cf = client.sendAsync(httpRequest3, bodyHandler);
 ////                        Function<HttpResponse<byte[]>, byte[]> f = httpResponse -> httpResponse.body();
 //                        Function<HttpResponse<byte[]>, byte[]> f = HttpResponse::body;
@@ -259,68 +302,83 @@ public class HttpServerClass {
 //                        String finalVname = vname;
 //                        Consumer consumer = arrayOfBytes -> downloadVid((byte[]) arrayOfBytes, finalVname);;
 //                        CompletableFuture cf3 = cf2.thenAccept(consumer);
+//                        cf3.thenRun(() -> {
+//                            cdl.countDown();
+//                        });
+//                        cdl.await();
+
+
 
 
 //                        // working
-//                        HttpResponse.BodyHandler<InputStream> bodyHandler = HttpResponse.BodyHandlers.ofInputStream();
-//                        HttpResponse<InputStream> clientResponse3 = client.send(httpRequest3, bodyHandler);
-//                        Path vidFilePath = Paths.get("../flv/" + vname + ".flv");
-//                        InputStream bodyInputStream = clientResponse3.body();
+                    HttpResponse.BodyHandler<InputStream> bodyHandler = HttpResponse.BodyHandlers.ofInputStream();
+                    HttpResponse<InputStream> clientResponse3 = client.send(httpRequest3, bodyHandler);
+                    Path vidFilePath = Paths.get("../flv/" + vname + ".flv");
+                    InputStream bodyInputStream = clientResponse3.body();
 
-//                        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(String.valueOf(vidFilePath)));) {
-//                            // v3
-//                            int len;
-//                            int total = 0;
-//                            byte[] buff = new byte[1024 * 1024];
-//                            while ((len = bodyInputStream.read(buff)) != -1) {
-//                                bufferedOutputStream.write(buff, 0, len);
+                    try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(String.valueOf(vidFilePath)));) {
+                        // v3
+                        int len;
+                        int total = 0;
+                        byte[] buff = new byte[1024 * 1024];
+                        System.out.format("%s.flv is downloading!%n", vname);
+                        while ((len = bodyInputStream.read(buff)) != -1) {
+                            bufferedOutputStream.write(buff, 0, len);
 //                                total += len;
 //                                System.out.format("%s.flv received %s mega byte%n", vname, total / (1024 * 1024));
-//                            }
-//                            System.out.format("%s.flv is downloaded! aid=%s,  cid=%s, quality=%s, format=%s %n", vname, aid, cid, quality, format);
-//                        } catch (IOException ex) {
-//                            System.err.format("IOException: %s%n", ex);
-//                        }
+                        }
+
+                        String finalVname = vname;
+                        String resBodyString = String.format("%s.flv is downloaded!%n", finalVname);
+                        byte[] resBodyToWriteToOutput = resBodyString.getBytes(StandardCharsets.UTF_8);
+                        int resBodyToWriteToOutputLength = resBodyToWriteToOutput.length;
+                        try {
+                            httpExchange.sendResponseHeaders(200, resBodyToWriteToOutputLength);
+                            os.write(resBodyToWriteToOutput);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        cdl.countDown();
+
+                        System.out.format("%s.flv is downloaded! aid=%s,  cid=%s, quality=%s, format=%s %n", vname, aid, cid, quality, format);
+                    } catch (IOException ex) {
+                        System.err.format("IOException: %s%n", ex);
+                    }
+                    cdl.await();
 
 
-                        // not working
-                        // BufferedWriter writer = Files.newBufferedWriter(filePath, charset)
-                        // write text to a file, is video has charset? not working
 
-                        // not working
+                    // not working
+                    // BufferedWriter writer = Files.newBufferedWriter(filePath, charset)
+                    // write text to a file, is video has charset? not working
+
+                    // not working
 //                        HttpResponse.BodyHandler<Path> bodyHandler = HttpResponse.BodyHandlers.ofFile(filePath);
 //                        client.sendAsync(httpRequest3, bodyHandler)
 //                                .thenApply(HttpResponse::body)
 //                                .thenAccept(System.out::println);
 
-                    } catch (Exception ex) {
-                        System.err.format("IOException: %s%n", ex);
-                    }
+                    System.out.format("This process is running out...%s%n", "");
 
-
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                } catch (Exception ex) {
+                    System.err.format("IOException: %s%n", ex);
                 }
 
-            } else if (reqURIStr.equals("/favicon.ico")) {
-                httpExchange.sendResponseHeaders(404, -1);
-            } else {
-                response = "not found";
-                httpExchange.sendResponseHeaders(404, -1);
-                os.write(response.getBytes());
+
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            os.close();
 
+        } else if (reqURIStr.equals("/favicon.ico")) {
+            httpExchange.sendResponseHeaders(404, -1);
+        } else {
+            response = "not found";
+            httpExchange.sendResponseHeaders(404, -1);
+            os.write(response.getBytes());
         }
+        os.close();
+
     }
-
-    public static void handleHTTP() throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        HttpContext httpContext = server.createContext("/", new MyHandler());
-        server.setExecutor(null); // creates a default executor
-        server.start();
-    }
-
-
 }

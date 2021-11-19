@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6877ecdc-116a-4a9d-baea-fa112e9e5dd6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bilibili.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bilibili.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HttpServerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bilibili.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../netserver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../static.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bilibili.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpServerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpServerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nodejs/bilibili.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +139,17 @@
       <workItem from="1636803913862" duration="98000" />
       <workItem from="1636804030744" duration="14691000" />
       <workItem from="1636821262944" duration="389000" />
-      <workItem from="1636857595318" duration="28422000" />
+      <workItem from="1636857595318" duration="31119000" />
+      <workItem from="1636898337928" duration="7412000" />
+      <workItem from="1636943796375" duration="2423000" />
+      <workItem from="1637065104620" duration="106000" />
+      <workItem from="1637065240643" duration="63000" />
+      <workItem from="1637065336770" duration="87000" />
+      <workItem from="1637065480327" duration="26000" />
+      <workItem from="1637065541129" duration="34000" />
+      <workItem from="1637065601294" duration="264000" />
+      <workItem from="1637065935882" duration="317000" />
+      <workItem from="1637066718056" duration="293000" />
     </task>
     <servers />
   </component>
@@ -182,5 +182,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/java$HttpServerClass.ic" NAME="HttpServerClass Coverage Results" MODIFIED="1636898380475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

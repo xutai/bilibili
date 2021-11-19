@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <header>
+    <h1>bilibili</h1>
+  </header>
+  <main>
+    <section>
+      <h2>aid:</h2>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <h2>p:</h2>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <button onclick="getUrl()">Submit</button>
+    </section>
+  </main>
+  <footer></footer>
+  <script>
+    function getUrl() {
+      const el = document.getElementsByTagName("textarea")[0];
+      const aid = el.value;
+
+      const el2 = document.getElementsByTagName("textarea")[1];
+      const p = el2.value;
+
+      openHttp(aid, p);
+      /* openSocket(); */
+    }
+
+    function openHttp(aid, p) {
+      function reqListener(e) {
+        console.log(this.responseText);
+      }
+
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", reqListener);
+      oReq.addEventListener("error", function (e) {
+        console.log("http error: ", e);
+      });
+
+      oReq.open(
+        "GET",
+        "http://127.0.0.1:8080/bilibiliurl?aid=" + aid + "&p=" + p + "&seq=1"
+      );
+
+      oReq.send();
+      console.info(
+        "The request is sent! aid=" + aid + "&p=" + p + "&seq=1"
+      );
+    }
+
+    function openSocket() {
+      const socket = new WebSocket("ws://localhost:8081");
+
+      socket.addEventListener("open", function (event) {
+        let msg = "Web client";
+        socket.send(msg);
+      });
+
+      socket.addEventListener("message", function (event) {
+        console.log("socket mesage: ", event.data);
+      });
+
+      socket.addEventListener("error", function (e) {
+        console.log("socket error", e);
+      });
+
+      socket.addEventListener("close", function (e) {
+        console.log("socket close", e);
+      });
+    }
+  </script>
+</body>
+
+</html>
