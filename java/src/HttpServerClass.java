@@ -187,7 +187,11 @@ class HandleHttpThreadClass extends Thread {
 
                 Integer cid;
                 String vname;
+                String title;
+                Integer videos;
                 int page = Integer.parseInt(p);
+                title = (String) data1jackson.get("title");
+                videos = (Integer) data1jackson.get("videos");
                 if (p.isEmpty()) {
                     cid = (Integer) data1jackson.get("cid");
                     vname = (String) data1jackson.get("title");
@@ -313,7 +317,19 @@ class HandleHttpThreadClass extends Thread {
 //                        // working
                     HttpResponse.BodyHandler<InputStream> bodyHandler = HttpResponse.BodyHandlers.ofInputStream();
                     HttpResponse<InputStream> clientResponse3 = client.send(httpRequest3, bodyHandler);
-                    Path vidFilePath = Paths.get("../flv/" + vname + ".flv");
+                    Path vidFilePath;
+                    if (videos == 1) {
+                        vidFilePath = Paths.get("../flv/" + title + " " + vname + ".flv");
+                    } else {
+                        String fileDirectory;
+                        fileDirectory = "../flv/" +  title;
+                        vidFilePath = Paths.get( fileDirectory,"/p" +  p + " - " + title + " - " + vname + ".flv");
+                        Path filePath = Paths.get(fileDirectory);
+                        if (Files.notExists(filePath)) {
+                            Files.createDirectories(filePath);
+                        }
+
+                    }
                     InputStream bodyInputStream = clientResponse3.body();
 
                     try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(String.valueOf(vidFilePath)));) {

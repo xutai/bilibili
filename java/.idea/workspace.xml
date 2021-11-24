@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6877ecdc-116a-4a9d-baea-fa112e9e5dd6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bilibili.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HttpServerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpServerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nodejs/bilibili.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -150,6 +148,11 @@
       <workItem from="1637065601294" duration="264000" />
       <workItem from="1637065935882" duration="317000" />
       <workItem from="1637066718056" duration="293000" />
+      <workItem from="1637323397767" duration="2296000" />
+      <workItem from="1637580142598" duration="703000" />
+      <workItem from="1637651785139" duration="4497000" />
+      <workItem from="1637684159984" duration="184000" />
+      <workItem from="1637684361594" duration="1375000" />
     </task>
     <servers />
   </component>
