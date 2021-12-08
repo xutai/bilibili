@@ -57,7 +57,7 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,6 +153,10 @@
       <workItem from="1637651785139" duration="4497000" />
       <workItem from="1637684159984" duration="184000" />
       <workItem from="1637684361594" duration="1375000" />
+      <workItem from="1637724862897" duration="3034000" />
+      <workItem from="1638347427983" duration="592000" />
+      <workItem from="1638601147393" duration="623000" />
+      <workItem from="1638688273992" duration="59000" />
     </task>
     <servers />
   </component>

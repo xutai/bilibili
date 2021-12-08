@@ -319,11 +319,11 @@ class HandleHttpThreadClass extends Thread {
                     HttpResponse<InputStream> clientResponse3 = client.send(httpRequest3, bodyHandler);
                     Path vidFilePath;
                     if (videos == 1) {
-                        vidFilePath = Paths.get("../flv/" + title + " " + vname + ".flv");
+                        vidFilePath = Paths.get("../flv/" + title + ".flv");
                     } else {
                         String fileDirectory;
                         fileDirectory = "../flv/" +  title;
-                        vidFilePath = Paths.get( fileDirectory,"/p" +  p + " - " + title + " - " + vname + ".flv");
+                        vidFilePath = Paths.get( fileDirectory,"/p" +  p + " " + vname + ".flv");
                         Path filePath = Paths.get(fileDirectory);
                         if (Files.notExists(filePath)) {
                             Files.createDirectories(filePath);
