@@ -323,7 +323,8 @@ class HandleHttpThreadClass extends Thread {
                     } else {
                         String fileDirectory;
                         fileDirectory = "../flv/" +  title;
-                        vidFilePath = Paths.get( fileDirectory,"/p" +  p + " " + vname + ".flv");
+//                        vidFilePath = Paths.get( fileDirectory,"/p" +  p + " " + vname + ".flv");
+                        vidFilePath = Paths.get( fileDirectory,"/" + vname + ".flv");
                         Path filePath = Paths.get(fileDirectory);
                         if (Files.notExists(filePath)) {
                             Files.createDirectories(filePath);
